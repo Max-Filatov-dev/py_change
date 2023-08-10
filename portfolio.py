@@ -38,7 +38,7 @@ portfolio = {
         "vrtx": (6, 183.79),
     },
     "rus": {
-        "mgnt": (-15, 5779),
+        "mgnt": (-14, 5586),
         "gmkn": (4, 19410),
         "phor": (17, 2377),
         "upro": (30000, 1.829),
@@ -116,7 +116,7 @@ def get_data_rus(*, ticker: str, action: str, show: bool = True):
     last_price_rus = data_rus["marketdata"]["data"][0][0]
     if action == "change" and change_rus:
         result_chage_rus = change_rus * portfolio["rus"][ticker][0]
-        change_rus_str = f"{'+' if change_rus > 0 else ''}{round(result_chage_rus)}"
+        change_rus_str = f"{'+' if result_chage_rus > 0 else ''}{round(result_chage_rus)}"
         print(f"{ticker.upper():<5} {change_rus_str}") if show else None
         return result_chage_rus
     elif action == "price" and last_price_rus:
